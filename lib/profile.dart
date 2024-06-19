@@ -274,7 +274,12 @@ class ProfileScreen extends StatelessWidget {
           children: <Widget>[
             IconButton(
               icon: Icon(Icons.home),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Dashboard()),
+                );
+              },
             ),
             IconButton(
               icon: Icon(Icons.search),
@@ -287,13 +292,8 @@ class ProfileScreen extends StatelessWidget {
             ),
             IconButton(
               icon: Icon(Icons.person),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ProfileScreen(porto: porto),
-                    ));
-              },
+              onPressed:
+                  () {}, // Biarkan tetap mengarah ke halaman profil saat ini
             ),
           ],
         ),
