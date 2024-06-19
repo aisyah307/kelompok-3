@@ -36,84 +36,77 @@ class PortfolioScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20.0),
         child: Column(
           children: [
-            Expanded(
-              child: GridView.count(
-                crossAxisCount: 2,
-                mainAxisSpacing: 20,
-                crossAxisSpacing: 20,
-                children: [
-                  GestureDetector(
-                    onTap: () {
-                      // Logic untuk membuka portofolio
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: const Color.fromARGB(255, 78, 24, 21),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => PortoPage(),
-                              ),
-                            );
-                          },
-                          child: Text(
-                            'Nama Portofolio',
-                            style: GoogleFonts.getFont(
-                              'Urbanist',
-                              fontWeight: FontWeight.w700,
-                              fontSize: 16,
-                              color: Colors.blueAccent,
-                            ),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(10),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
+            GestureDetector(
+              onTap: () {
+                // Logic untuk membuka portofolio
+              },
+              child: Container(
+                margin: EdgeInsets.only(
+                    bottom: 20), // Add margin bottom for spacing
+                decoration: BoxDecoration(
+                  color: const Color.fromARGB(255, 78, 24, 21),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: ElevatedButton(
+                    onPressed: () {
                       Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => TambahPorto(porto: porto),
-                          ));
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                        color: Colors.grey[300],
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      child: Center(
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Icon(Icons.add, size: 40, color: Colors.black),
-                            SizedBox(height: 10),
-                            Text(
-                              'Tambah Portofolio',
-                              style: GoogleFonts.getFont(
-                                'Urbanist',
-                                fontWeight: FontWeight.w700,
-                                fontSize: 16,
-                                color: Colors.black,
-                              ),
-                            ),
-                          ],
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PortoPage(),
                         ),
+                      );
+                    },
+                    child: Text(
+                      'Nama Portofolio',
+                      style: GoogleFonts.getFont(
+                        'Urbanist',
+                        fontWeight: FontWeight.w700,
+                        fontSize: 16,
+                        color: Colors.blueAccent,
+                      ),
+                    ),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10),
                       ),
                     ),
                   ),
-                ],
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => TambahPorto(porto: porto),
+                    ));
+              },
+              child: Container(
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.add, size: 40, color: Colors.black),
+                      SizedBox(height: 10),
+                      Text(
+                        'Tambah Portofolio',
+                        style: GoogleFonts.getFont(
+                          'Urbanist',
+                          fontWeight: FontWeight.w700,
+                          fontSize: 16,
+                          color: Colors.black,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
               ),
             ),
           ],

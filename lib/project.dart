@@ -29,54 +29,80 @@ class Project extends StatelessWidget {
                   onTap: () {
                     // Navigate to project detail or edit page
                   },
-                  child: Container(
-                    margin: const EdgeInsets.all(8),
-                    padding: const EdgeInsets.all(8),
-                    decoration: BoxDecoration(
-                      border: Border.all(
-                          color: const Color.fromARGB(255, 214, 214, 214)),
-                      borderRadius: BorderRadius.circular(10),
-                    ),
-                    child: Column(
-                      children: [
-                        AspectRatio(
-                          aspectRatio: 16 / 9,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color.fromARGB(255, 235, 191, 72),
-                            ),
-                          ),
+                  child: Stack(
+                    children: [
+                      Container(
+                        margin: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(8),
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                              color: const Color.fromARGB(255, 214, 214, 214)),
+                          borderRadius: BorderRadius.circular(10),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Column(
-                            children: [
-                              Text(
-                                item.project,
-                                style: GoogleFonts.urbanist(
-                                    fontSize: 17, fontWeight: FontWeight.w500),
+                        child: Column(
+                          children: [
+                            AspectRatio(
+                              aspectRatio: 16 / 9,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(10),
+                                  color: Color.fromARGB(255, 235, 191, 72),
+                                ),
                               ),
-                              Row(
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8),
+                              child: Column(
                                 children: [
-                                  CircleAvatar(
-                                    radius: 18,
-                                    backgroundColor: Colors.red,
-                                  ),
-                                  SizedBox(width: 30),
                                   Text(
-                                    item.user,
+                                    item.project,
                                     style: GoogleFonts.urbanist(
                                         fontSize: 17,
                                         fontWeight: FontWeight.w500),
                                   ),
+                                  Row(
+                                    children: [
+                                      CircleAvatar(
+                                        radius: 18,
+                                        backgroundColor: Colors.red,
+                                      ),
+                                      SizedBox(width: 30),
+                                      Text(
+                                        item.user,
+                                        style: GoogleFonts.urbanist(
+                                            fontSize: 17,
+                                            fontWeight: FontWeight.w500),
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               ),
-                            ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        bottom: 8,
+                        right: 8,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            // Navigate to edit project page
+                          },
+                          style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            padding: EdgeInsets.all(8),
+                            shape: CircleBorder(),
+                          ),
+                          child: Text(
+                            'Edit',
+                            style: GoogleFonts.urbanist(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 );
               },
