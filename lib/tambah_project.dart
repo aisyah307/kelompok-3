@@ -141,6 +141,7 @@ class _TambahProjectState extends State<TambahProject> {
                   fontSize: 20,
                   fontWeight: FontWeight.w500,
                 ),
+                textAlign: TextAlign.center,
               ),
               SizedBox(height: 40),
               ElevatedButton(
@@ -155,8 +156,13 @@ class _TambahProjectState extends State<TambahProject> {
                     ),
                   );
                 },
-                child: Text('Lihat Project'),
-              ),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                child: Text(
+                  'Lihat Project',
+                  style: GoogleFonts.urbanist(
+                      fontSize: 20, fontWeight: FontWeight.w500),
+                ),
+              )
             ],
           ],
         ),

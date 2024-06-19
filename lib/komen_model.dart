@@ -27,6 +27,9 @@ class KomenModel {
     return {
       'comment_id': comment_id,
       'portofolio_id': portofolio_id,
+      'content': content,
+      'created_at': created_at,
+      'updated_at': updated_at
     };
   }
 }

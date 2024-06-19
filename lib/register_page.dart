@@ -112,204 +112,206 @@ class _RegisterPageState extends State<RegisterPage> {
       appBar: AppBar(
         title: Text('Register Page'),
       ),
-      body: Container(
-        decoration: BoxDecoration(
-          color: Color(0xFFEFEFEF),
-        ),
-        child: SizedBox(
-          width: screenWidth,
-          child: Container(
-            padding: EdgeInsets.fromLTRB(38, 45.8, 39.2, 0),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Align(
-                  alignment: Alignment.topCenter,
-                  child: Text(
-                    'Silahkan Isi Data',
-                    style: GoogleFonts.urbanist(
-                      fontWeight: FontWeight.w700,
-                      fontSize: 24,
-                      height: 1,
-                      color: Color(0xFF000000),
-                    ),
-                  ),
-                ),
-                SizedBox(height: 30),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFEBEBEB),
-                  ),
-                  child: TextField(
-                    controller: _firstNameController,
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 40.8, vertical: 15),
-                      hintText: 'Nama Depan',
-                      hintStyle: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.w500,
+      body: SingleChildScrollView(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Color(0xFFEFEFEF),
+          ),
+          child: SizedBox(
+            width: screenWidth,
+            child: Container(
+              padding: EdgeInsets.fromLTRB(38, 45.8, 39.2, 0),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Align(
+                    alignment: Alignment.topCenter,
+                    child: Text(
+                      'Silahkan Isi Data',
+                      style: GoogleFonts.urbanist(
+                        fontWeight: FontWeight.w700,
                         fontSize: 24,
-                        color: Color(0xFFA3A3A3),
-                      ),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFEBEBEB),
-                  ),
-                  child: TextField(
-                    controller: _lastNameController,
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 40.8, vertical: 15),
-                      hintText: 'Nama Belakang',
-                      hintStyle: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        color: Color(0xFFA3A3A3),
-                      ),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFEBEBEB),
-                  ),
-                  child: TextField(
-                    controller: _emailController,
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 40.8, vertical: 15),
-                      hintText: 'Email',
-                      hintStyle: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        color: Color(0xFFA3A3A3),
-                      ),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFEBEBEB),
-                  ),
-                  child: TextField(
-                    controller: _passwordController,
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 40.8, vertical: 15),
-                      hintText: 'Password',
-                      hintStyle: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        color: Color(0xFFA3A3A3),
-                      ),
-                      border: InputBorder.none,
-                    ),
-                    obscureText: true,
-                  ),
-                ),
-                SizedBox(height: 20),
-                Container(
-                  decoration: BoxDecoration(
-                    border: Border.all(color: Color(0xFF000000)),
-                    borderRadius: BorderRadius.circular(20),
-                    color: Color(0xFFEBEBEB),
-                  ),
-                  child: TextField(
-                    controller: _dateOfBirthController,
-                    decoration: InputDecoration(
-                      contentPadding:
-                          EdgeInsets.symmetric(horizontal: 40.8, vertical: 15),
-                      hintText: 'Tanggal Lahir (DD/MM/YY)',
-                      hintStyle: GoogleFonts.urbanist(
-                        fontWeight: FontWeight.w500,
-                        fontSize: 24,
-                        color: Color(0xFFA3A3A3),
-                      ),
-                      border: InputBorder.none,
-                    ),
-                  ),
-                ),
-                SizedBox(height: 30),
-                GestureDetector(
-                  onTap: _register,
-                  child: SizedBox(
-                    width: screenWidth * 0.8,
-                    child: ElevatedButton(
-                      onPressed: _register,
-                      style: ElevatedButton.styleFrom(
-                        padding: EdgeInsets.symmetric(vertical: 15),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(32.9),
-                        ),
-                        backgroundColor: Color(0xFF4285F4),
-                      ),
-                      child: Text(
-                        'Register',
-                        style: GoogleFonts.urbanist(
-                          fontWeight: FontWeight.w500,
-                          fontSize: screenWidth * 0.05,
-                          height: 1,
-                          color: Colors.white,
-                        ),
+                        height: 1,
+                        color: Color(0xFF000000),
                       ),
                     ),
                   ),
-                ),
-                SizedBox(height: 20),
-                Align(
-                  alignment: Alignment.center,
-                  child: GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginPage()),
-                      );
-                    },
-                    child: RichText(
-                      text: TextSpan(
-                        text: 'Sudah punya akun?',
-                        style: GoogleFonts.urbanist(
+                  SizedBox(height: 30),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF000000)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color(0xFFEBEBEB),
+                    ),
+                    child: TextField(
+                      controller: _firstNameController,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 40.8, vertical: 15),
+                        hintText: 'Nama Depan',
+                        hintStyle: GoogleFonts.urbanist(
                           fontWeight: FontWeight.w500,
                           fontSize: 24,
-                          color: Color(0xFF000000),
+                          color: Color(0xFFA3A3A3),
                         ),
-                        children: [
-                          TextSpan(
-                            text: ' Login disini!',
-                            style: GoogleFonts.urbanist(
-                              fontWeight: FontWeight.w700,
-                              fontSize: 24,
-                              color: Color(0xFF4285F4),
-                            ),
-                          ),
-                        ],
+                        border: InputBorder.none,
                       ),
                     ),
                   ),
-                ),
-              ],
+                  SizedBox(height: 20),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF000000)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color(0xFFEBEBEB),
+                    ),
+                    child: TextField(
+                      controller: _lastNameController,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 40.8, vertical: 15),
+                        hintText: 'Nama Belakang',
+                        hintStyle: GoogleFonts.urbanist(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24,
+                          color: Color(0xFFA3A3A3),
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF000000)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color(0xFFEBEBEB),
+                    ),
+                    child: TextField(
+                      controller: _emailController,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 40.8, vertical: 15),
+                        hintText: 'Email',
+                        hintStyle: GoogleFonts.urbanist(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24,
+                          color: Color(0xFFA3A3A3),
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF000000)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color(0xFFEBEBEB),
+                    ),
+                    child: TextField(
+                      controller: _passwordController,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 40.8, vertical: 15),
+                        hintText: 'Password',
+                        hintStyle: GoogleFonts.urbanist(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24,
+                          color: Color(0xFFA3A3A3),
+                        ),
+                        border: InputBorder.none,
+                      ),
+                      obscureText: true,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Color(0xFF000000)),
+                      borderRadius: BorderRadius.circular(20),
+                      color: Color(0xFFEBEBEB),
+                    ),
+                    child: TextField(
+                      controller: _dateOfBirthController,
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                            horizontal: 40.8, vertical: 15),
+                        hintText: 'Tanggal Lahir (DD/MM/YY)',
+                        hintStyle: GoogleFonts.urbanist(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 24,
+                          color: Color(0xFFA3A3A3),
+                        ),
+                        border: InputBorder.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  GestureDetector(
+                    onTap: _register,
+                    child: SizedBox(
+                      width: screenWidth * 0.8,
+                      child: ElevatedButton(
+                        onPressed: _register,
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.symmetric(vertical: 15),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(32.9),
+                          ),
+                          backgroundColor: Color(0xFF4285F4),
+                        ),
+                        child: Text(
+                          'Register',
+                          style: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.w500,
+                            fontSize: screenWidth * 0.05,
+                            height: 1,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Align(
+                    alignment: Alignment.center,
+                    child: GestureDetector(
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginPage()),
+                        );
+                      },
+                      child: RichText(
+                        text: TextSpan(
+                          text: 'Sudah punya akun?',
+                          style: GoogleFonts.urbanist(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 24,
+                            color: Color(0xFF000000),
+                          ),
+                          children: [
+                            TextSpan(
+                              text: ' Login disini!',
+                              style: GoogleFonts.urbanist(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 24,
+                                color: Color(0xFF4285F4),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ),
-      ),
+      ), //container
       floatingActionButton: FloatingActionButton(onPressed: () async {
         final data = await studentservice.RegisterPage(
           StudentModel(
@@ -321,6 +323,6 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
         );
       }),
-    );
+    ); //sca
   }
 }

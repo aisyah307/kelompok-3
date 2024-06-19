@@ -5,7 +5,7 @@ import 'package:homepage/student_model.dart';
 class Studentservice {
   final Dio _dio = Dio();
   Studentservice() {
-    _dio.options.baseUrl = 'https://akita-composed-hedgehog.ngrok-free.app/api';
+    _dio.options.baseUrl = 'localhost:3000/api';
   }
 
   Future<StudentModel> RegisterPage(StudentModel student) async {

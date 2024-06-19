@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:homepage/following.dart';
+//import 'package:homepage/following.dart';
 import 'package:homepage/porto_model.dart';
 
 class TambahPorto extends StatefulWidget {
@@ -54,15 +54,12 @@ class _TambahPortoState extends State<TambahPorto> {
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.pushAndRemoveUntil(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => Following(
-                              porto: [],
-                            )), // Halaman Following
-                    (Route<dynamic> route) =>
-                        false, // Menghapus semua rute sebelumnya
-                  );
+                  // Reset nilai isSuccess menjadi false
+                  setState(() {
+                    isSuccess = false;
+                  });
+                  // Kembali ke halaman sebelumnya
+                  Navigator.of(context).pop();
                 },
                 style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
                 child: Text("Back"),

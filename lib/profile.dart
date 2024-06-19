@@ -8,9 +8,9 @@ import 'dart:ui'; // Untuk BackdropFilter
 import 'package:homepage/porto_model.dart';
 
 class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key, required this.porto});
   final PortoModel porto;
 
-  const ProfileScreen({super.key, required this.porto});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -133,7 +133,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const EditPasswordScreen()),
+                                        EditPasswordScreen(porto: porto)),
                               );
                             },
                             icon: Icon(Icons.lock_outline),
@@ -163,7 +163,7 @@ class ProfileScreen extends StatelessWidget {
                                 context,
                                 MaterialPageRoute(
                                     builder: (context) =>
-                                        const EditProfileScreen()),
+                                        EditProfileScreen(porto: porto)),
                               );
                             },
                             icon: Icon(Icons.person),

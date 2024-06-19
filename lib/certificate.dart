@@ -23,28 +23,36 @@ class Certificate extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Image.asset(
-              'asset/sertifikat1.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
+            Center(
+              child: Image.asset(
+                'asset/sertifikat1.png',
+                fit: BoxFit.contain, // or BoxFit.fitWidth
+                alignment: Alignment.center,
+              ),
             ),
-            SizedBox(height: 16), // Add some spacing between images
-            Image.asset(
-              'asset/sertifikat2.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
+            SizedBox(height: 16),
+            Center(
+              child: Image.asset(
+                'asset/sertifikat2.png',
+                fit: BoxFit.contain, // or BoxFit.fitWidth
+                alignment: Alignment.center,
+              ),
             ),
-            SizedBox(height: 16), // Add some spacing between images
-            Image.asset(
-              'asset/sertifikat3.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
+            SizedBox(height: 16),
+            Center(
+              child: Image.asset(
+                'asset/sertifikat3.png',
+                fit: BoxFit.contain, // or BoxFit.fitWidth
+                alignment: Alignment.center,
+              ),
             ),
-            SizedBox(height: 16), // Add some spacing between images
-            Image.asset(
-              'asset/sertifikat1.png',
-              fit: BoxFit.cover,
-              alignment: Alignment.center,
+            SizedBox(height: 16),
+            Center(
+              child: Image.asset(
+                'asset/sertifikat1.png',
+                fit: BoxFit.contain, // or BoxFit.fitWidth
+                alignment: Alignment.center,
+              ),
             ),
           ],
         ),
