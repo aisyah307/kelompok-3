@@ -1,6 +1,6 @@
 # homepage
 
-A new Flutter project.
+A new project kelompok 3.
 
 ## Getting Started
 
