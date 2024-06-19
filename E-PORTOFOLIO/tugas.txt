@@ -1,0 +1,8 @@
+1. membuat minimal 3 entitas
+   misal perpus App
+   - User http://express-api/user
+   - room http://express-api/room
+   - Book http://express-api/Book
+2. Membuat rute
+   - Post 
+   - Put

@@ -1,0 +1,126 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql" // Bisa disesuaikan dengan database yang digunakan (mysql, sqlite, dsb.)
+  url      = env("DATABASE_URL")
+}
+
+model Student {
+  student_id   Int       @id @default(autoincrement())
+  first_name   String
+  last_name    String
+  email        String    @unique
+  password     String
+  date_of_birth DateTime
+  profile_image String?
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+
+  portfolios   Portfolio[]
+  skills       StudentSkill[]
+  certificates Certificate[]
+  achievements Achievement[]
+  comments     Comment[]
+}
+
+model Portfolio {
+  portfolio_id Int       @id @default(autoincrement())
+  student_id   Int
+  title        String
+  description  String
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+
+  student      Student   @relation(fields: [student_id], references: [student_id])
+  projects     Project[]
+  comments     Comment[]
+}
+
+model Skill {
+  skill_id    Int       @id @default(autoincrement())
+  name        String
+  description String?
+
+  studentSkills StudentSkill[]
+}
+
+model StudentSkill {
+  id         Int    @id @default(autoincrement())
+  student_id Int
+  skill_id   Int
+  proficiency Proficiency
+
+  student   Student @relation(fields: [student_id], references: [student_id])
+  skill     Skill   @relation(fields: [skill_id], references: [skill_id])
+}
+
+model Project {
+  project_id   Int       @id @default(autoincrement())
+  portfolio_id Int
+  title        String
+  description  String
+  link         String?
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+
+  portfolio    Portfolio @relation(fields: [portfolio_id], references: [portfolio_id])
+  media        Media[]
+}
+
+model Certificate {
+  certificate_id Int       @id @default(autoincrement())
+  student_id     Int
+  name           String
+  issuer         String
+  date_issued    DateTime
+  description    String?
+  file_url       String?
+
+  student        Student   @relation(fields: [student_id], references: [student_id])
+}
+
+model Achievement {
+  achievement_id Int       @id @default(autoincrement())
+  student_id     Int
+  title          String
+  description    String
+  date_achieved  DateTime
+
+  student        Student   @relation(fields: [student_id], references: [student_id])
+}
+
+model Media {
+  media_id   Int     @id @default(autoincrement())
+  project_id Int
+  media_type MediaType
+  media_url  String
+  description String?
+
+  project    Project @relation(fields: [project_id], references: [project_id])
+}
+
+model Comment {
+  comment_id   Int       @id @default(autoincrement())
+  portfolio_id Int
+  student_id   Int
+  content      String
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+
+  portfolio    Portfolio @relation(fields: [portfolio_id], references: [portfolio_id])
+  student      Student   @relation(fields: [student_id], references: [student_id])
+}
+
+enum Proficiency {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum MediaType {
+  IMAGE
+  VIDEO
+  DOCUMENT
+}
